@@ -1,0 +1,217 @@
+/* =========================================================
+   Arkham Cómics - Estilos generales
+   Los colores y medidas principales están en :root para
+   poder cambiarlos desde un solo lugar.
+   ========================================================= */
+
+:root {
+  --color-primario: #6a1b9a;
+  --color-primario-oscuro: #4a148c;
+  --color-acento: #ffc107;
+  --color-fondo: #f4f1f8;
+  --color-tarjeta: #ffffff;
+  --color-texto: #222222;
+  --color-texto-suave: #666666;
+  --radio: 10px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --fuente: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: min(1100px, 100% - 32px);
+  margin: 0 auto;
+}
+
+/* ---------------- Encabezado ---------------- */
+.encabezado {
+  background: var(--color-primario-oscuro);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.encabezado__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--color-acento);
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a:hover {
+  color: var(--color-acento);
+}
+
+.carrito {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ---------------- Portada (hero) ---------------- */
+.hero {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro));
+  color: #fff;
+  padding: 56px 0;
+  text-align: center;
+}
+
+.hero__titulo {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.hero__texto {
+  opacity: 0.9;
+}
+
+/* ---------------- Catálogo ---------------- */
+.seccion__titulo {
+  margin: 32px 0 16px;
+  font-size: 1.6rem;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.producto {
+  background: var(--color-tarjeta);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+}
+
+.producto__portada {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Colores de portada (se pueden agregar más) */
+.portada--azul     { background: linear-gradient(160deg, #1e3a8a, #0f172a); }
+.portada--rojo     { background: linear-gradient(160deg, #dc2626, #7f1d1d); }
+.portada--naranja  { background: linear-gradient(160deg, #f97316, #9a3412); }
+.portada--negro    { background: linear-gradient(160deg, #404040, #0a0a0a); }
+.portada--gris     { background: linear-gradient(160deg, #9ca3af, #374151); }
+.portada--amarillo { background: linear-gradient(160deg, #eab308, #854d0e); }
+
+.producto__info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.producto__categoria {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  background: #ede7f6;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.producto__titulo {
+  font-size: 1.05rem;
+}
+
+.producto__autor {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.producto__precio {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: auto;
+}
+
+.btn-agregar {
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-primario);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background: var(--color-primario-oscuro);
+}
+
+/* ---------------- Pie de página ---------------- */
+.pie {
+  background: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ---------------- Responsivo ---------------- */
+@media (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+
+  .hero__titulo {
+    font-size: 1.6rem;
+  }
+}
