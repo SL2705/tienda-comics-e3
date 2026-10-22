@@ -1,5 +1,8 @@
 # Tienda de Cómics A3 - Módulo de Filtrado
 
+### Acceso a la aplicación web del proyecto
+https://sl2705.github.io/tienda-comics-e3/
+
 Sistema de comercio electrónico enfocado en la gestión y visualización dinámica de un catálogo de cómics segmentado por categorías. Este proyecto implementa un flujo de trabajo colaborativo mediante control de versiones con Git y GitHub.
 
 ## Descripción de la Funcionalidad
