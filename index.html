@@ -17,9 +17,10 @@
         <a href="#catalogo">Catálogo</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <div class="carrito" aria-label="Carrito de compras">
+      <button class="carrito" id="btn-carrito" type="button"
+              aria-expanded="false" aria-controls="panel-carrito">
         🛒 <span id="contador-carrito">0</span>
-      </div>
+      </button>
     </div>
   </header>
 
@@ -27,7 +28,7 @@
   <section class="hero">
     <div class="contenedor">
       <h1 class="hero__titulo">Bienvenido a E3 Cómics</h1>
-      <p class="hero__texto">Superhéroes, manga y novelas gráficas en un solo lugar.</p>
+      <p class="hero__texto">Superhéroes, cómics, manga y novelas gráficas en un solo lugar.</p>
     </div>
   </section>
 
@@ -35,114 +36,35 @@
   <main id="catalogo" class="contenedor">
     <h2 class="seccion__titulo">Catálogo</h2>
 
-    <!-- Aquí irá la barra de filtros por categoría -->
+    <nav class="filtros" aria-label="Filtrar catálogo por categoría">
+      <button class="filtro categoria-activa" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button class="filtro" type="button" data-filtro="superheroes" aria-pressed="false">Superhéroes</button>
+      <button class="filtro" type="button" data-filtro="comics" aria-pressed="false">Cómics</button>
+      <button class="filtro" type="button" data-filtro="manga" aria-pressed="false">Manga</button>
+      <button class="filtro" type="button" data-filtro="novelas-graficas" aria-pressed="false">Novelas gráficas</button>
+    </nav>
 
-    <div class="catalogo">
-
-      <!-- ---------- Superhéroes ---------- -->
-      <article class="producto">
-        <div class="producto__portada portada--azul"><span>BATMAN</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Superhéroes</span>
-          <h3 class="producto__titulo">Batman: Año Uno</h3>
-          <p class="producto__autor">Frank Miller</p>
-          <p class="producto__precio">$349.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--rojo"><span>SPIDER-MAN</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Superhéroes</span>
-          <h3 class="producto__titulo">Spider-Man: Azul</h3>
-          <p class="producto__autor">Jeph Loeb</p>
-          <p class="producto__precio">$299.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--rojo"><span>SUPERMAN</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Superhéroes</span>
-          <h3 class="producto__titulo">Superman: Hijo Rojo</h3>
-          <p class="producto__autor">Mark Millar</p>
-          <p class="producto__precio">$389.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <!-- ---------- Manga ---------- -->
-      <article class="producto">
-        <div class="producto__portada portada--naranja"><span>ONE PIECE</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Manga</span>
-          <h3 class="producto__titulo">One Piece Vol. 1</h3>
-          <p class="producto__autor">Eiichiro Oda</p>
-          <p class="producto__precio">$159.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--naranja"><span>AKIRA</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Manga</span>
-          <h3 class="producto__titulo">Akira Vol. 1</h3>
-          <p class="producto__autor">Katsuhiro Otomo</p>
-          <p class="producto__precio">$459.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--negro"><span>BERSERK</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Manga</span>
-          <h3 class="producto__titulo">Berserk Vol. 1</h3>
-          <p class="producto__autor">Kentaro Miura</p>
-          <p class="producto__precio">$229.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <!-- ---------- Novelas gráficas ---------- -->
-      <article class="producto">
-        <div class="producto__portada portada--gris"><span>MAUS</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Novelas gráficas</span>
-          <h3 class="producto__titulo">Maus</h3>
-          <p class="producto__autor">Art Spiegelman</p>
-          <p class="producto__precio">$499.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--negro"><span>PERSÉPOLIS</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Novelas gráficas</span>
-          <h3 class="producto__titulo">Persépolis</h3>
-          <p class="producto__autor">Marjane Satrapi</p>
-          <p class="producto__precio">$429.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-      <article class="producto">
-        <div class="producto__portada portada--amarillo"><span>WATCHMEN</span></div>
-        <div class="producto__info">
-          <span class="producto__categoria">Novelas gráficas</span>
-          <h3 class="producto__titulo">Watchmen</h3>
-          <p class="producto__autor">Alan Moore</p>
-          <p class="producto__precio">$649.00</p>
-          <button class="btn-agregar" type="button">Agregar al carrito</button>
-        </div>
-      </article>
-
-    </div>
+    <div class="catalogo"></div>
   </main>
+
+  <!-- ===================== CARRITO ===================== -->
+  <aside id="panel-carrito" class="carrito-panel" hidden aria-label="Carrito de compras">
+    <div class="carrito-panel__cabecera">
+      <h2>Tu carrito</h2>
+      <button id="cerrar-carrito" class="carrito-panel__cerrar" type="button" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío.</p>
+    <ul id="lista-carrito" class="lista-carrito"></ul>
+
+    <div id="resumen-carrito" class="resumen-carrito" hidden>
+      <div class="resumen-carrito__linea"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <div class="resumen-carrito__linea"><span>IVA (16%)</span><span id="iva">$0.00</span></div>
+      <div class="resumen-carrito__linea resumen-carrito__total"><span>Total</span><span id="total">$0.00</span></div>
+      <button class="btn-pagar" type="button" id="btn-pagar">Pagar</button>
+      <p class="carrito-nota">Demostración: el pago no está habilitado.</p>
+    </div>
+  </aside>
 
   <!-- ===================== PIE DE PÁGINA ===================== -->
   <footer id="contacto" class="pie">
