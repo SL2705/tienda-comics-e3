@@ -165,6 +165,9 @@ const filtrar = (categoria, filtroActivo) => {
 
 filtros.forEach((filtro) => {
   filtro.addEventListener("click", () =>
-    filtrar(filtro.dataset.filtro, filtro)
+    //Anterior
+    //filtrar(filtro.dataset.filtro, filtro)
+    //Cambio Actual
+    filtrar(filtro.dataset.categoria, filtro)
   );
 });
