@@ -1,1 +1,1 @@
-primera versión del filtro
+segunda versión con cambio recuperable
