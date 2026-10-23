@@ -148,7 +148,8 @@ document.getElementById("anio").textContent = new Date().getFullYear();
 
 // ---------------- Filtro por categoría ----------------
 const filtros = document.querySelectorAll(".filtro");
-const tarjetas = document.querySelectorAll(".producto");
+const tarjetas = document.querySelectorAll("[data-categoria][data-filtro]");
+const mensajeCategoria = "Categoría activa seleccionada";
 
 const filtrar = (categoria, filtroActivo) => {
   tarjetas.forEach((producto) => {
